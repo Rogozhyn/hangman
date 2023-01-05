@@ -33,4 +33,6 @@ def hangman ():
         print('\nYou lose! The words was {}'.format(word))
 
 
-hangman()
+if __name__ == "__main__":
+    hangman()
+    
