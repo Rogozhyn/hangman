@@ -1,5 +1,4 @@
-def hangman ():
-    word = "cat"
+def hangman (word):
     wrong_guesses = 0
     stages = ["",
               "_________",
@@ -25,14 +24,16 @@ def hangman ():
         print(' '.join(score_board))
         print(' \n '.join(stages[0: wrong_guesses + 1]))
         if '_' not in score_board:
-            print('\nYou win! The word was {}'.format(word))
+            print('\nYou win! The word was {}\n'.format(word))
             win = True
             break
     if not win:
         print(' \n '.join(stages[0: wrong_guesses + 1]))
-        print('\nYou lose! The words was {}'.format(word))
+        print('\nYou lose! The words was {}\n'.format(word))
 
 
 if __name__ == "__main__":
-    hangman()
+    while True:
+        word = input("Enter word to play Hangman: ")
+        hangman(word)
     
