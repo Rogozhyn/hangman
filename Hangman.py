@@ -11,7 +11,7 @@ def hangman (word):
     letters_left = list(word)
     score_board = ['_'] * len(word)
     win = False
-    print('Welcome to Hang Man')
+    print('Welcome to Hang Man game')
     while wrong_guesses < len(stages) - 1:
         print(' \n ')
         guess = input("Guess a letter: ")
