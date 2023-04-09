@@ -11,10 +11,10 @@ def hangman (word):
     letters_left = list(word)
     score_board = ['_'] * len(word)
     win = False
-    print('Welcome to Hang Man game v.1.0')
+    print('Вітаємо в грі Шибениця')
     while wrong_guesses < len(stages) - 1:
         print(' \n ')
-        guess = input("Guess a letter: ")
+        guess = input("Вгадайте літеру: ")
         if guess in letters_left:
             character_index = letters_left.index(guess)
             score_board[character_index] = guess
@@ -24,16 +24,16 @@ def hangman (word):
         print(' '.join(score_board))
         print(' \n '.join(stages[0: wrong_guesses + 1]))
         if '_' not in score_board:
-            print('\nYou win! The word was {}\n'.format(word))
+            print('\nВи перемогли! Слово було "{}"\n'.format(word))
             win = True
             break
     if not win:
         print(' \n '.join(stages[0: wrong_guesses + 1]))
-        print('\nYou lose! The words was {}\n'.format(word))
+        print('\nВи програли! Слово було "{}"\n'.format(word))
 
 
 if __name__ == "__main__":
     while True:
-        word = input("Enter word to play Hangman: ")
+        word = input("Введіть слово, щоб грати в гру Шибениця: ")
         hangman(word)
     
